@@ -16,3 +16,9 @@ pip install -U git+https://starrfox/uwuify@master
 echo hello | uwuify -> hewwo
 uwuify --input file.txt --output output.txt -> contents of file.txt uwuifed into output.txt
 ```
+or
+```python
+from uwuify import uwu_text
+
+print(uwu_text('hello')) # hewwo
+```

@@ -38,7 +38,10 @@ def do_translate(entry: Union[list, str]) -> str:
 
     final = []
     for word in entry:
-        final.append(word[0].translate(WREPLACE) + word[1:].translate(UWU))
+        if word:
+            final.append(word[0].translate(WREPLACE) + word[1:].translate(UWU))
+        else:
+            final.append(' ')
     return ' '.join(final)
 
 
