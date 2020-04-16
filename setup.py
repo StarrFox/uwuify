@@ -4,7 +4,7 @@ import re
 
 from setuptools import setup
 
-with open('uwuify/__init__.py') as f:
+with open('uwuify/__init__.py', encoding='UTF-8') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 with open('README.md') as fp:
