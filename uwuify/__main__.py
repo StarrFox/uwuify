@@ -30,7 +30,7 @@ from uwuify import *
 @click.argument('input', type=click.File())
 @click.argument('output', type=click.File('w'))
 @click.option('--mode',
-              type=click.Choice(('translate', 'regex'), case_sensitive=False),
+              type=click.Choice(('translate', 'regex', 'smiley'), case_sensitive=False),
               default='regex',
               help='Mode to use for the uwuification process.'
               )

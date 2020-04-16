@@ -1,5 +1,7 @@
 # uwuify
 
+![PyPI - Downloads](https://img.shields.io/pypi/dm/uwuify?style=for-the-badge)
+
 Command line uwuification
 
 # Installation
