@@ -2,29 +2,32 @@
 
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/uwuify?style=for-the-badge)
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+
 Command line uwuification
 
 # Installation
 ```shell
-# Stable
-pip install -U uwuify
-
-# Dev
-pip install -U git+https://starrfox/uwuify@master
+pip install uwuify
 ```
 
 # Usage
 ```shell
-echo hello | uwuify - -
+uwuify hello
 # outputs hewwo in console
 
-uwuify input.txt output.txt
-# contents of input.txt uwuifed into output.txt
+uwuify how are you? --smiley --yu
+# outputs how awe yoyu? with 50% of a smiley
 ```
 or
 ```python
-from uwuify import uwu_text
+import uwuify
 
-print(uwu_text('hello'))
+print(uwuify.uwu("hello"))
 # hewwo
+
+flags = uwuify.SMILEY | uwuify.YU
+print(uwuify.uwu("how are you?", flags=flags))
+# how awe yoyu? with 50% of a smiley
 ```
