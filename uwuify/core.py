@@ -103,7 +103,7 @@ def _do_smily(entry: str) -> str:
 
     final = []
     for word in entry:
-        if word.endswith((".", "?", "!")) and random.choice((True, False)):
+        if word.endswith((".", "?", "!")):
             final.append(word + " " + random.choice(SMILEYS))
 
         else:

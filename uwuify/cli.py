@@ -22,11 +22,18 @@ import click
 
 from uwuify import SMILEY, YU, uwu
 
+def allow_pipe(ctx, param, value):
+    if not value and not click.get_text_stream('stdin').isatty():
+        pipped = click.get_text_stream('stdin').read().strip()
+        return pipped.split(" ")  # Compatibility with -1 garbage
+    else:
+        return value
+
 
 @click.command(help="Command line uwuification.")
 @click.option("--smiley", is_flag=True, help="Add smileys on puntuation.")
 @click.option("--yu", is_flag=True, help="Replace u with yu")
-@click.argument("text", nargs=-1)
+@click.argument("text", nargs=-1, callback=allow_pipe)
 def main(smiley, yu, text):
     text = " ".join(text)
     flags = 0

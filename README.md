@@ -18,7 +18,7 @@ uwuify hello
 # outputs hewwo in console
 
 uwuify how are you? --smiley --yu
-# outputs how awe yoyu? with 50% of a smiley
+# outputs how awe yoyu? with a random smiley
 ```
 or
 ```python
@@ -29,5 +29,5 @@ print(uwuify.uwu("hello"))
 
 flags = uwuify.SMILEY | uwuify.YU
 print(uwuify.uwu("how are you?", flags=flags))
-# how awe yoyu? with 50% of a smiley
+# how awe yoyu? with a random smiley
 ```
