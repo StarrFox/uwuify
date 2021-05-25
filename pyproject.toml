@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "uwuify"
+version = "1.0.2"
+description = "uwuifys text"
+authors = ["StarrFox <starrfox6312@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/StarrFox/uwuify"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+click = "^8.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+uwuify = "uwuify.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

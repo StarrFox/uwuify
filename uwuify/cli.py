@@ -22,6 +22,7 @@ import click
 
 from uwuify import SMILEY, YU, uwu
 
+
 def allow_pipe(ctx, param, value):
     if not value and not click.get_text_stream('stdin').isatty():
         pipped = click.get_text_stream('stdin').read().strip()
