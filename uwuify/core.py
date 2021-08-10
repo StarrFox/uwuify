@@ -28,7 +28,7 @@ class UwuifyFlag(IntFlag):
     YU = 2
 
 
-# from https://cutekaomoji.com/characters/uwu/
+# from https://cutekaomoji.com/characters/uwu/ and https://textfac.es/ (and some made by Plextora: https://github.com/Plextora)
 SMILEYS = [
     "(ᵘʷᵘ)",
     "(ᵘﻌᵘ)",
@@ -64,6 +64,9 @@ SMILEYS = [
     "( ͡o ᵕ ͡o )",
     "( ͡o ꒳ ͡o )",
     "( ˊ.ᴗˋ )",
+    "(ᴜ‿ᴜ✿)",
+    "~(˘▾˘~)",
+    "(｡ᴜ‿‿ᴜ｡)",
     "uwu",
     "owo",
 ]
@@ -91,7 +94,7 @@ def _do_uwu(entry: str) -> str:
     return translated
 
 
-def _do_smily(entry: str) -> str:
+def _do_smiley(entry: str) -> str:
     if not isinstance(entry, list):
         entry = entry.split(" ")
 
@@ -118,6 +121,6 @@ def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
     entry = _do_uwu(entry)
 
     if flags & UwuifyFlag.SMILEY:
-        entry = _do_smily(entry)
+        entry = _do_smiley(entry)
 
     return entry
