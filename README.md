@@ -34,4 +34,8 @@ print(uwuify.uwu("hello"))
 flags = uwuify.SMILEY | uwuify.YU
 print(uwuify.uwu("how are you?", flags=flags))
 # how awe yoyu? with a random smiley
+
+flags = uwuify.SMILEY | uwuify.YU | uwuify.STUTTER
+print(uwuify.uwu("how are you?", flags=flags))
+# h-how awe yoyu? with a random smiley
 ```
