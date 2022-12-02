@@ -20,9 +20,9 @@ uwuify hello
 uwuify how are you? --smiley --yu
 # outputs how awe yoyu? with a random smiley
 
-uwuify how are you? --smiley --yu --do-stutter
+uwuify how are you? --smiley --yu --stutter
 # outputs h-how awe yoyu? with a random smiley
-# --do-stutter stutters every 4-th word
+# --stutter stutters every 4-th word
 ```
 or
 ```python
