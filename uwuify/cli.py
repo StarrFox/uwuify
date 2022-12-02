@@ -20,7 +20,7 @@
 
 import click
 
-from __init__ import SMILEY, YU, uwu, STUTTER
+from uwuify import SMILEY, YU, uwu, STUTTER
 
 
 def allow_pipe(ctx, param, value):
