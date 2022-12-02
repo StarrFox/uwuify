@@ -20,7 +20,7 @@
 
 __version__ = "1.0.2"
 
-from core import UwuifyFlag, uwu
+from .core import UwuifyFlag, uwu
 
 SMILEY = UwuifyFlag.SMILEY
 YU = UwuifyFlag.YU

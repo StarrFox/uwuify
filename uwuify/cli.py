@@ -35,13 +35,13 @@ def allow_pipe(ctx, param, value):
 @click.option("--smiley", is_flag=True, help="Add smileys on puntuation.")
 @click.option("--yu", is_flag=True, help="Replace u with yu")
 @click.option(
-    "--do-stutter",
+    "--stutter",
     help="Add stutter for every 4-th word.",
     is_flag=True,
     type=int
 )
 @click.argument("text", nargs=-1, callback=allow_pipe)
-def main(smiley, yu, text, do_stutter):
+def main(smiley, yu, text, stutter):
     text = " ".join(text)
     flags = 0
 
@@ -51,7 +51,7 @@ def main(smiley, yu, text, do_stutter):
     if yu:
         flags |= YU
 
-    if do_stutter:
+    if stutter:
         flags |= STUTTER
 
     uwuified = uwu(text, flags=flags)
