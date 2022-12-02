@@ -19,6 +19,10 @@ uwuify hello
 
 uwuify how are you? --smiley --yu
 # outputs how awe yoyu? with a random smiley
+
+uwuify how are you? --smiley --yu --do-stutter
+# outputs h-how awe yoyu? with a random smiley
+# --do-stutter stutters every 4-th word
 ```
 or
 ```python
@@ -30,4 +34,8 @@ print(uwuify.uwu("hello"))
 flags = uwuify.SMILEY | uwuify.YU
 print(uwuify.uwu("how are you?", flags=flags))
 # how awe yoyu? with a random smiley
+
+flags = uwuify.SMILEY | uwuify.YU | uwuify.STUTTER
+print(uwuify.uwu("how are you?", flags=flags))
+# h-how awe yoyu? with a random smiley
 ```

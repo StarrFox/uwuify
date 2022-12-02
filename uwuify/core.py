@@ -26,6 +26,7 @@ from typing import Union
 class UwuifyFlag(IntFlag):
     SMILEY = 1
     YU = 2
+    STUTTER = 4
 
 
 # from https://cutekaomoji.com/characters/uwu/ and https://textfac.es/ (and some made by Plextora: https://github.com/Plextora)
@@ -111,6 +112,17 @@ def _do_smiley(entry: str) -> str:
     return " ".join(final)
 
 
+def _do_stutter(entry: str, stutter_every_nth_word: int = 4) -> str:
+    listofstr = entry.split(" ")
+    result = []
+    for index, word in enumerate(listofstr):
+        if index % stutter_every_nth_word == 0:
+            result.append("{}-{}{}".format(word[0], word[0], word[1:]))
+        else:
+            result.append(word)
+    return " ".join(result)
+
+
 def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
     if len(entry) == 0:  # Maybe this should error??
         return entry
@@ -122,5 +134,8 @@ def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
 
     if flags & UwuifyFlag.SMILEY:
         entry = _do_smiley(entry)
+
+    if flags & UwuifyFlag.STUTTER:
+        entry = _do_stutter(entry)
 
     return entry
