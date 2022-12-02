@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "uwuify"
-version = "1.2.0"
+version = "1.2.1"
 description = "uwuifys text"
 authors = ["StarrFox <starrfox6312@gmail.com>"]
 license = "MIT"
