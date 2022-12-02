@@ -132,10 +132,11 @@ def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
 
     entry = _do_uwu(entry)
 
+    if flags & UwuifyFlag.STUTTER:
+        entry = _do_stutter(entry)
+
     if flags & UwuifyFlag.SMILEY:
         entry = _do_smiley(entry)
 
-    if flags & UwuifyFlag.STUTTER:
-        entry = _do_stutter(entry)
 
     return entry
