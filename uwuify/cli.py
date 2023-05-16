@@ -15,10 +15,7 @@ def allow_pipe(ctx, param, value):
 @click.option("--smiley", is_flag=True, help="Add smileys on punctuation.")
 @click.option("--yu", is_flag=True, help="Replace u with yu")
 @click.option(
-    "--stutter",
-    help="Add stutter for every 4-th word.",
-    is_flag=True,
-    type=int
+    "--stutter", help="Add stutter for every 4-th word.", is_flag=True, type=int
 )
 @click.option("--nouwu", is_flag=True, help="Disable uwuification.")
 @click.argument("text", nargs=-1, callback=allow_pipe)

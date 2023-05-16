@@ -95,6 +95,11 @@ def _do_smiley(entry: str) -> str:
 
 
 def _do_stutter(entry: str, stutter_every_nth_word: int = 4) -> str:
+    if stutter_every_nth_word < 1:
+        raise ValueError(
+            f"stutter_every_nth_word must be above 0; passed {stutter_every_nth_word}"
+        )
+
     listofstr = entry.split(" ")
     result = []
     for index, word in enumerate(listofstr):
