@@ -3,10 +3,16 @@ from enum import IntFlag
 from typing import Union
 
 
+import re
+from enum import IntFlag
+from typing import Union
+
+
 class UwuifyFlag(IntFlag):
     SMILEY = 1
     YU = 2
     STUTTER = 4
+    NOUWU = 8
 
 
 # from https://cutekaomoji.com/characters/uwu/ and https://textfac.es/
@@ -110,8 +116,9 @@ def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
 
     if flags & UwuifyFlag.YU:
         entry = _do_yu(entry)
-
-    entry = _do_uwu(entry)
+    
+    if flags & UwuifyFlag.NOUWU == 0:
+        entry = _do_uwu(entry)
 
     if flags & UwuifyFlag.STUTTER:
         entry = _do_stutter(entry)

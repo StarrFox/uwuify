@@ -6,3 +6,4 @@ from .core import UwuifyFlag, uwu
 SMILEY = UwuifyFlag.SMILEY
 YU = UwuifyFlag.YU
 STUTTER = UwuifyFlag.STUTTER
+NOUWU = UwuifyFlag.NOUWU
