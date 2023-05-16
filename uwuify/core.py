@@ -7,6 +7,7 @@ class UwuifyFlag(IntFlag):
     SMILEY = 1
     YU = 2
     STUTTER = 4
+    NOUWU = 8
 
 
 # from https://cutekaomoji.com/characters/uwu/ and https://textfac.es/
@@ -111,13 +112,13 @@ def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
     if flags & UwuifyFlag.YU:
         entry = _do_yu(entry)
 
-    entry = _do_uwu(entry)
+    if not flags & UwuifyFlag.NOUWU:
+        entry = _do_uwu(entry)
 
     if flags & UwuifyFlag.STUTTER:
         entry = _do_stutter(entry)
 
     if flags & UwuifyFlag.SMILEY:
         entry = _do_smiley(entry)
-
 
     return entry

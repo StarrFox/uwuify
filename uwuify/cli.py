@@ -1,6 +1,6 @@
 import click
 
-from uwuify import SMILEY, YU, uwu, STUTTER
+from uwuify import SMILEY, YU, uwu, STUTTER, NOUWU
 
 
 def allow_pipe(ctx, param, value):
@@ -12,7 +12,7 @@ def allow_pipe(ctx, param, value):
 
 
 @click.command(help="Command line uwuification.")
-@click.option("--smiley", is_flag=True, help="Add smileys on puntuation.")
+@click.option("--smiley", is_flag=True, help="Add smileys on punctuation.")
 @click.option("--yu", is_flag=True, help="Replace u with yu")
 @click.option(
     "--stutter",
@@ -20,8 +20,9 @@ def allow_pipe(ctx, param, value):
     is_flag=True,
     type=int
 )
+@click.option("--nouwu", is_flag=True, help="Disable uwuification.")
 @click.argument("text", nargs=-1, callback=allow_pipe)
-def main(smiley, yu, text, stutter):
+def main(smiley, yu, text, stutter, nouwu):
     text = " ".join(text)
     flags = 0
 
@@ -33,6 +34,9 @@ def main(smiley, yu, text, stutter):
 
     if stutter:
         flags |= STUTTER
+
+    if nouwu:
+        flags |= NOUWU
 
     uwuified = uwu(text, flags=flags)
     click.echo(uwuified)
