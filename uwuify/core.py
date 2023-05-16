@@ -4,6 +4,7 @@ from typing import Union
 
 
 class UwuifyFlag(IntFlag):
+    NONE = 0
     SMILEY = 1
     YU = 2
     STUTTER = 4
@@ -79,12 +80,12 @@ def _do_uwu(entry: str) -> str:
 
 def _do_smiley(entry: str) -> str:
     if not isinstance(entry, list):
-        entry = entry.split(" ")
+        entry_split = entry.split(" ")
 
     import random
 
     final = []
-    for word in entry:
+    for word in entry_split:
         if word.endswith((".", "?", "!")):
             final.append(word + " " + random.choice(SMILEYS))
 
@@ -110,7 +111,10 @@ def _do_stutter(entry: str, stutter_every_nth_word: int = 4) -> str:
     return " ".join(result)
 
 
-def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
+def uwu(entry: Union[list, str], *, flags: UwuifyFlag = UwuifyFlag.NONE) -> str:
+    if isinstance(entry, list):
+        entry = " ".join(entry)
+
     if len(entry) == 0:  # Maybe this should error??
         return entry
 
