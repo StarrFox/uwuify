@@ -109,11 +109,11 @@ def uwu(entry: Union[list, str], *, flags: UwuifyFlag = 0) -> str:
     if len(entry) == 0:  # Maybe this should error??
         return entry
 
-    if not flags & UwuifyFlag.NOUWU:
-        entry = _do_uwu(entry)
-
     if flags & UwuifyFlag.YU:
         entry = _do_yu(entry)
+
+    if not flags & UwuifyFlag.NOUWU:
+        entry = _do_uwu(entry)
 
     if flags & UwuifyFlag.STUTTER:
         entry = _do_stutter(entry)
