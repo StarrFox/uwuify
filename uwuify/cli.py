@@ -36,7 +36,7 @@ def main(smiley, yu, text, stutter, nouwu):
         flags |= STUTTER
 
     if nouwu:
-        flags | NOUWU
+        flags |= NOUWU
 
     uwuified = uwu(text, flags=flags)
     click.echo(uwuified)
