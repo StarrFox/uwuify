@@ -35,4 +35,4 @@ def test_uwu():
     flags |= core.UwuifyFlag.YU
     flags |= core.UwuifyFlag.SMILEY
 
-    assert(core.uwu("hello! how are you?", flags=flags) == "h-hewwo! (U ᵕ U❁) how awe yoyu? (◦ᵕ ˘ ᵕ◦)")
+    assert core.uwu("hello! how are you?", flags=flags) == "h-hewwo! (U ᵕ U❁) how awe yoyu? (◦ᵕ ˘ ᵕ◦)"
