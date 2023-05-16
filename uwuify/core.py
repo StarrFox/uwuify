@@ -3,11 +3,6 @@ from enum import IntFlag
 from typing import Union
 
 
-import re
-from enum import IntFlag
-from typing import Union
-
-
 class UwuifyFlag(IntFlag):
     SMILEY = 1
     YU = 2
