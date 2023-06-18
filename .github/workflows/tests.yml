@@ -3,11 +3,11 @@ name: Tests
 on:
   push:
     paths:
-      - "wizwad/**"
+      - "uwuify/**"
       - ".github/workflows/tests.yml"
   pull_request:
     paths:
-      - "wizwad/**"
+      - "uwuify/**"
       - ".github/workflows/tests.yml"
 
 jobs:
