@@ -1,6 +1,6 @@
 import click
 
-from uwuify import SMILEY, YU, uwu, STUTTER, NOUWU
+from uwuify import SMILEY, YU, uwu, STUTTER, NOUWU, UwuifyFlag
 
 
 def allow_pipe(ctx, param, value):
@@ -21,7 +21,7 @@ def allow_pipe(ctx, param, value):
 @click.argument("text", nargs=-1, callback=allow_pipe)
 def main(smiley, yu, text, stutter, nouwu):
     text = " ".join(text)
-    flags = 0
+    flags = UwuifyFlag.NONE
 
     if smiley:
         flags |= SMILEY
