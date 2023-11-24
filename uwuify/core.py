@@ -1,6 +1,7 @@
 import re
+import random
 from enum import IntFlag
-from typing import Union
+from typing import List, Union
 
 
 class UwuifyFlag(IntFlag):
@@ -79,13 +80,8 @@ def _do_uwu(entry: str) -> str:
 
 
 def _do_smiley(entry: str) -> str:
-    if not isinstance(entry, list):
-        entry_split = entry.split(" ")
-
-    import random
-
-    final = []
-    for word in entry_split:
+    final: List[str] = []
+    for word in entry.split(" "):
         if word.endswith((".", "?", "!")):
             final.append(word + " " + random.choice(SMILEYS))
 
@@ -115,7 +111,7 @@ def uwu(entry: Union[list, str], *, flags: UwuifyFlag = UwuifyFlag.NONE) -> str:
     if isinstance(entry, list):
         entry = " ".join(entry)
 
-    if len(entry) == 0:  # Maybe this should error??
+    if len(entry) == 0:  # Maybe this should error?
         return entry
 
     if flags & UwuifyFlag.YU:
