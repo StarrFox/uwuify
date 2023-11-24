@@ -1,7 +1,7 @@
 from uwuify import core
 
-
 # TODO: expand tests
+
 
 def test_do_uwu():
     assert core._do_uwu("hello") == "hewwo"
@@ -29,10 +29,14 @@ def test_do_stutter():
 
 def test_uwu():
     import random
+
     random.seed(0)
 
     flags = core.UwuifyFlag.STUTTER
     flags |= core.UwuifyFlag.YU
     flags |= core.UwuifyFlag.SMILEY
 
-    assert core.uwu("hello! how are you?", flags=flags) == "h-hewwo! (U ᵕ U❁) how awe yoyu? (◦ᵕ ˘ ᵕ◦)"
+    assert (
+        core.uwu("hello! how are you?", flags=flags)
+        == "h-hewwo! (U ᵕ U❁) how awe yoyu? (◦ᵕ ˘ ᵕ◦)"
+    )

@@ -1,5 +1,5 @@
-import re
 import random
+import re
 from enum import IntFlag
 from typing import List, Union
 

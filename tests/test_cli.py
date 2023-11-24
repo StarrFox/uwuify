@@ -2,7 +2,6 @@ from click.testing import CliRunner
 
 from uwuify import cli
 
-
 # TODO: expand tests
 
 
@@ -33,4 +32,3 @@ def test_main_flags():
     result = runner.invoke(cli.main, "--stutter hello".split(" "))
     assert result.exit_code == 0
     assert result.output == "h-hewwo\n"
-

@@ -1,6 +1,6 @@
 import click
 
-from uwuify import SMILEY, YU, uwu, STUTTER, NOUWU, UwuifyFlag
+from uwuify import NOUWU, SMILEY, STUTTER, YU, UwuifyFlag, uwu
 
 
 def allow_pipe(ctx, param, value):

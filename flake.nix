@@ -46,7 +46,7 @@
         devShells.default = pkgs.mkShell {
           name = packageName;
           packages = with pkgs; [
-            (poetry.withPlugins(ps: with ps; [poetry-plugin-up]))
+            (poetry.withPlugins (ps: with ps; [poetry-plugin-up]))
             python
             just
             alejandra
