@@ -15,7 +15,7 @@ click = "^8.1.7"
 uwuify = "uwuify.cli:main"
 
 [tool.poetry.group.tests.dependencies]
-pytest = "^7.4.3"
+pytest = "^8.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.0.0"
