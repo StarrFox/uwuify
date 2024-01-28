@@ -6,10 +6,14 @@ on:
     paths:
       - "uwuify/**"
       - ".github/workflows/tests.yml"
+      - "pyproject.toml"
+      - "poetry.lock"
   pull_request:
     paths:
       - "uwuify/**"
       - ".github/workflows/tests.yml"
+      - "pyproject.toml"
+      - "poetry.lock"
 
 jobs:
   test:
