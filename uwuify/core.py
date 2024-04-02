@@ -99,11 +99,13 @@ def _do_stutter(entry: str, stutter_every_nth_word: int = 4) -> str:
 
     listofstr = re.split(r"(\s+)", entry)
     result = []
-    for index, word in enumerate(listofstr):
-        if index % stutter_every_nth_word == 0 and not word.isspace() and word != "":
-            result.append("{}-{}{}".format(word[0], word[0], word[1:]))
-        else:
-            result.append(word)
+    words_since_last_stutter = 0
+    for word in listofstr:
+        if word != "" and not word.isspace():
+            if words_since_last_stutter % stutter_every_nth_word == 0:
+                word = "{}-{}".format(word[0], word)
+            words_since_last_stutter += 1
+        result.append(word)
     return "".join(result)
 
 
