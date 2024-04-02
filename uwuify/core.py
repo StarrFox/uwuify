@@ -97,14 +97,14 @@ def _do_stutter(entry: str, stutter_every_nth_word: int = 4) -> str:
             f"stutter_every_nth_word must be above 0; passed {stutter_every_nth_word}"
         )
 
-    listofstr = entry.split(" ")
+    listofstr = re.split(r"(\s+)", entry)
     result = []
     for index, word in enumerate(listofstr):
-        if index % stutter_every_nth_word == 0:
+        if index % stutter_every_nth_word == 0 and not word.isspace() and word != "":
             result.append("{}-{}{}".format(word[0], word[0], word[1:]))
         else:
             result.append(word)
-    return " ".join(result)
+    return "".join(result)
 
 
 def uwu(entry: Union[list, str], *, flags: UwuifyFlag = UwuifyFlag.NONE) -> str:
