@@ -8,7 +8,7 @@ readme = "README.md"
 repository = "https://github.com/StarrFox/uwuify"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 click = "^8.1.7"
 
 [tool.poetry.scripts]
